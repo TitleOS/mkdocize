@@ -21,7 +21,7 @@ def clone_or_pull_repo():
 
 def run_mkdocs():
     global mkdocs_process
-    mkdocs_process = subprocess.Popen(["mkdocs", "serve", "-f", f"{REPO_PATH}/mkdocs.yml", "-a", "0.0.0.0:8888"])
+    mkdocs_process = subprocess.Popen(["mkdocs", "serve", "-f", f"{REPO_PATH}/mkdocs.yml", "-a", "0.0.0.0:8000"])
 
 @app.route('/webhook', methods=['POST'])
 def webhook():

@@ -4,7 +4,7 @@ FROM python:3.9-alpine
 RUN apk add --no-cache git
 
 # Install MkDocs and required packages
-RUN pip install mkdocs mkdocs-material mkdocs-rss-plugin flask
+RUN pip install mkdocs mkdocs-material mkdocs-literate-nav mkdocs-git-authors-plugin mkdocs-git-revision-date-localized-plugin mkdocs-rss-plugin flask
 
 # Set up a directory for the wiki content
 WORKDIR /wiki

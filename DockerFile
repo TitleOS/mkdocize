@@ -1,0 +1,19 @@
+FROM python:3.9-alpine
+
+# Install git and required build dependencies
+RUN apk add --no-cache git
+
+# Install MkDocs and required packages
+RUN pip install mkdocs mkdocs-material flask
+
+# Set up a directory for the wiki content
+WORKDIR /wiki
+
+# Copy your MkDocs configuration file and webhook script
+COPY webhook.py .
+
+# Expose the port MkDocs will serve on
+EXPOSE 8888 9000
+
+# Command to start both MkDocs and the webhook listener
+CMD python webhook.py

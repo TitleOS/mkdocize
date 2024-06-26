@@ -13,7 +13,7 @@ WORKDIR /wiki
 COPY webhook.py .
 
 # Expose the port MkDocs will serve on
-EXPOSE 8888 9000
+EXPOSE 8000 9000
 
 # Command to start both MkDocs and the webhook listener
 CMD python webhook.py

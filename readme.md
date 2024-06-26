@@ -9,7 +9,9 @@ Build the DockerFile and modify the following example docker-compose.yml with po
 
 ```yaml
 version: '3'
-
+environment:
+  - REPO_URL=http://gitea.example.com/different-user/different-repo.git
+  - REPO_PATH=/wiki/docs
 services:
   wiki:
     build: .
